@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../translations-schema.yaml
+downloadCv: Zur neuesten Version auf
+tasks: Aufgaben
+technologies: Technologien
+social:
+  title: Sozial
+contact:
+  title: Kontakt
+  email: E-Mail
+  phone: Telefon
+language:
+  title: Sprachen
+  languages:
+    - name: Sindarin
+      proficiency: Muttersprache
+    - name: Gemeinsprache
+      proficiency: Fließend (C1)
+profile:
+  title: Profil
+  text: Erfahrener Wissenshüter mit jahrtausendealter Erfahrung in der Bewahrung antiker Schriften, arkaner Kartographie und interreichlicher Diplomatie. Leidenschaftlich engagiert für die Wahrung der Integrität historischer Aufzeichnungen über alle Zeitalter hinweg.
+workExperience:
+  title: Berufserfahrung
+  companies:
+    - name: Tirith Archives & Scrollworks
+      positions:
+        - from: 03/2021
+          title: Leitender Wissenshüter
+        - from: 06/2018
+          to: 02/2021
+          title: Wissenshüter
+      tasks:
+        - Katalogisierung und Bewahrung von über 3.000 antiken Schriftrollen zur Geschichte der Älteren Tage.
+      technologies:
+        - Elfentinte
+education:
+  title: Ausbildung
+  steps:
+    - from: 09/2014
+      to: 07/2018
+      title: Master of Lore, Antike Schriften & Kartographie
+      institution: College of Celoneth
+      grading: 'Note: 1,20'
+easterEgg: Du hast das erste Easter Egg gefunden. Glückwunsch!

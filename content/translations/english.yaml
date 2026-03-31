@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../translations-schema.yaml
+downloadCv: To latest version on
+tasks: Tasks
+technologies: Technologies
+social:
+  title: Social
+contact:
+  title: Contact
+  email: Email
+  phone: Phone
+language:
+  title: Languages
+  languages:
+    - name: Sindarin
+      proficiency: Native
+    - name: Common Tongue
+      proficiency: Proficient (C1)
+profile:
+  title: Profile
+  text: Seasoned lore keeper with millennia of experience in ancient script preservation, arcane cartography, and inter-realm diplomacy. Passionate about maintaining the integrity of historical records across the ages.
+workExperience:
+  title: Work Experience
+  companies:
+    - name: Tirith Archives & Scrollworks
+      positions:
+        - from: 03/2021
+          title: Senior Lore Keeper
+        - from: 06/2018
+          to: 02/2021
+          title: Lore Keeper
+      tasks:
+        - Catalogued and preserved over 3,000 ancient scrolls detailing the history of the Elder Days.
+      technologies:
+        - Elvish Ink
+education:
+  title: Education
+  steps:
+    - from: 09/2014
+      to: 07/2018
+      title: Master of Lore, Ancient Scripts & Cartography
+      institution: College of Celoneth
+      grading: 'Grade: 1.20'
+easterEgg: You found the first Easter egg. Congratulations!

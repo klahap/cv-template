@@ -1,0 +1,130 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+$schema: "https://json-schema.org/draft/2020-12/schema"
+type: object
+required:
+  - downloadCv
+  - tasks
+  - technologies
+  - social
+  - contact
+  - language
+  - profile
+  - workExperience
+  - education
+  - easterEgg
+additionalProperties: false
+properties:
+  downloadCv:
+    type: string
+  tasks:
+    type: string
+  technologies:
+    type: string
+  social:
+    type: object
+    required: [title]
+    additionalProperties: false
+    properties:
+      title:
+        type: string
+  contact:
+    type: object
+    required: [title, email, phone]
+    additionalProperties: false
+    properties:
+      title:
+        type: string
+      email:
+        type: string
+      phone:
+        type: string
+  language:
+    type: object
+    required: [title, languages]
+    additionalProperties: false
+    properties:
+      title:
+        type: string
+      languages:
+        type: array
+        items:
+          type: object
+          required: [name, proficiency]
+          additionalProperties: false
+          properties:
+            name:
+              type: string
+            proficiency:
+              type: string
+  profile:
+    type: object
+    required: [title, text]
+    additionalProperties: false
+    properties:
+      title:
+        type: string
+      text:
+        type: string
+  workExperience:
+    type: object
+    required: [title, companies]
+    additionalProperties: false
+    properties:
+      title:
+        type: string
+      companies:
+        type: array
+        items:
+          type: object
+          required: [name, positions, tasks, technologies]
+          additionalProperties: false
+          properties:
+            name:
+              type: string
+            positions:
+              type: array
+              items:
+                type: object
+                required: [from, title]
+                additionalProperties: false
+                properties:
+                  from:
+                    type: string
+                  to:
+                    type: string
+                  title:
+                    type: string
+            tasks:
+              type: array
+              items:
+                type: string
+            technologies:
+              type: array
+              items:
+                type: string
+  education:
+    type: object
+    required: [title, steps]
+    additionalProperties: false
+    properties:
+      title:
+        type: string
+      steps:
+        type: array
+        items:
+          type: object
+          required: [from, to, title, institution, grading]
+          additionalProperties: false
+          properties:
+            from:
+              type: string
+            to:
+              type: string
+            title:
+              type: string
+            institution:
+              type: string
+            grading:
+              type: string
+  easterEgg:
+    type: string

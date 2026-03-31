@@ -1,0 +1,39 @@
+name: "Release"
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Read Typst version
+        id: typst_version
+        run: echo "version=$(typst --version)" >> "$GITHUB_OUTPUT"
+
+      - name: Compile PDFs with Typst
+        env:
+          RELEASE_VERSION: ${{ github.ref_name }}
+        run: ./compile.sh
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TYPST_VERSION: ${{ steps.typst_version.outputs.version }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" dist/*.pdf \
+            --title "Release ${GITHUB_REF_NAME}" \
+            --generate-notes \
+            --notes "> Generated with \`${TYPST_VERSION}\`"
