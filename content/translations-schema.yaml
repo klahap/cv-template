@@ -5,6 +5,7 @@ required:
   - downloadCv
   - tasks
   - technologies
+  - projects
   - social
   - contact
   - language
@@ -18,6 +19,8 @@ properties:
   tasks:
     type: string
   technologies:
+    type: string
+  projects:
     type: string
   social:
     type: object

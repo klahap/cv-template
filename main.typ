@@ -216,7 +216,7 @@
 
       #if "projects" in step [
         #text(weight: "bold")[
-          #data.tasks:
+          #data.projects:
         ]
         #for project in step.projects [
           - #project
