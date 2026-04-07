@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: actions-template-sync
+      - name: Sync template
         uses: AndreasAugustin/actions-template-sync@v2
         with:
           source_gh_token: ${{ secrets.GITHUB_TOKEN }}
