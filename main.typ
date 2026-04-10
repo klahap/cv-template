@@ -87,7 +87,7 @@
   )
 ]
 
-#let date(value) = text(number-width: "tabular")[#value]
+#let style-date(value) = text(number-width: "tabular")[#value]
 
 #grid(
   columns: (22%, 76%),
@@ -187,9 +187,9 @@
         gutter: 10pt,
         ..company.positions.map(position => (
           if "to" in position [
-            #date(position.from) \- #date(position.to)
+            #style-date(position.from) \- #style-date(position.to)
           ] else [
-            #date(position.from)
+            #style-date(position.from)
           ],
           text(weight: "bold")[#position.title],
         )).flatten(),
@@ -220,7 +220,7 @@
       #grid(
         columns: (25%, 75%),
         gutter: 10pt,
-        date(step.from) + [ \- ] + date(step.to),
+        style-date(step.from) + [ \- ] + style-date(step.to),
         text(weight: "bold")[#step.title]
         + [ \- ]
         + step.institution
