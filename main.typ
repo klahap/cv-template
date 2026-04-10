@@ -81,9 +81,7 @@
     ],
     [
       #align(horizon)[
-        #text(weight: "bold")[
-          #title
-        ]
+        *#title*
       ]
     ],
   )
@@ -208,23 +206,19 @@
           ] else [
             #style-date(position.from)
           ],
-          text(weight: "bold")[#position.title],
+          [ *#position.title* ],
         )).flatten(),
       )
 
       #if "tasks" in company [
-        #text(weight: "bold")[
-          #data.tasks:
-        ]
+        *#data.tasks:*
         #for task in company.tasks [
           - #task
         ]
       ]
 
       #if "technologies" in company [
-        #text(weight: "bold")[
-          #data.technologies:
-        ]
+        *#data.technologies:*
         #company.technologies.join(", ")
       ]
 
@@ -238,17 +232,15 @@
         columns: (25%, 75%),
         gutter: 10pt,
         style-date(step.from) + [ \- ] + style-date(step.to),
-        text(weight: "bold")[#step.title]
-        + [ \- ]
+        [ *#step.title* ]
+        + (if "institutionNewline" in step and step.institutionNewline { [ \ ] } else { [ \- ] })
         + step.institution
         + [ \ ]
         + text(size: 8pt)[#step.grading],
       )
 
       #if "projects" in step [
-        #text(weight: "bold")[
-          #data.projects:
-        ]
+        *#data.projects*
         #for project in step.projects [
           - #project
         ]

@@ -30,7 +30,7 @@ properties:
         type: string
   personalDetails:
     type: object
-    required: [ title, data ]
+    required: [title, data]
     additionalProperties: false
     properties:
       title:
@@ -39,7 +39,7 @@ properties:
         type: array
         items:
           type: object
-          required: [ name, value ]
+          required: [name, value]
           additionalProperties: false
           properties:
             name:
@@ -143,6 +143,8 @@ properties:
               type: string
             institution:
               type: string
+            institutionNewline:
+              type: boolean
             grading:
               type: string
             projects:
