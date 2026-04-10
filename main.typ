@@ -10,10 +10,12 @@
       #release-version,
       #datetime.today().display()
     ]
-    #h(1fr)
-    #text(fill: gray)[
-      #link("https://github.com/" + general.githubName + "/cv/releases")[
-        #data.downloadCv GitHub
+    #if "githubName" in general [
+      #h(1fr)
+      #text(fill: gray)[
+        #link("https://github.com/" + general.githubName + "/cv/releases")[
+          #data.downloadCv GitHub
+        ]
       ]
     ]
   ]
@@ -109,9 +111,12 @@
   [
     #text(size: 28pt, weight: "bold")[
       #smallcaps(general.fullName)
-    ] \
-    #text(size: 12pt, fill: primaryColor, weight: "bold")[
-      #smallcaps(general.jobTitle)
+    ]
+    #if "jobTitle" in general [
+      #linebreak()
+      #text(size: 12pt, fill: primaryColor, weight: "bold")[
+        #smallcaps(general.jobTitle)
+      ]
     ]
 
     #if "profile" in data [
@@ -136,31 +141,43 @@
 
     #section-title(data.social.title)
 
-    *LinkedIn* \
-    #link("https://www.linkedin.com/in/" + general.linkedInName)[
-      #general.fullName
+    #if "linkedInName" in general [
+      *LinkedIn* \
+      #link("https://www.linkedin.com/in/" + general.linkedInName)[
+        #general.fullName
+      ]
+
+      #v(4pt)
+    ]
+
+    #if "githubName" in general [
+      *GitHub* \
+      #link("https://github.com/" + general.githubName)[
+        #general.githubName
+      ]
+
+      #v(4pt)
     ]
 
     #v(4pt)
-
-    *GitHub* \
-    #link("https://github.com/" + general.githubName)[
-      #general.githubName
-    ]
-
-    #v(8pt)
 
     #section-title(data.contact.title)
 
-    *#data.contact.email* \
-    #link("mailto:" + general.emailAddress)
+    #if "emailAddress" in general [
+      *#data.contact.email* \
+      #link("mailto:" + general.emailAddress)
+
+      #v(4pt)
+    ]
+
+    #if "phoneNumber" in general [
+      *#data.contact.phone* \
+      #link("tel:" + general.phoneNumber)
+
+      #v(4pt)
+    ]
 
     #v(4pt)
-
-    *#data.contact.phone* \
-    #link("tel:" + general.phoneNumber)
-
-    #v(8pt)
 
     #section-title(data.language.title)
 
