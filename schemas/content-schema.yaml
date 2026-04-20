@@ -72,7 +72,7 @@ properties:
     type: array
     items:
       type: object
-      required: [from, title, institution, grading]
+      required: [from, title, institution]
       additionalProperties: false
       properties:
         from:

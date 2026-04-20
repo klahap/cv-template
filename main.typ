@@ -256,8 +256,7 @@
         [ *#step.title* ]
         + (if "institutionNewline" in step and step.institutionNewline { [ \ ] } else { [ \- ] })
         + step.institution
-        + [ \ ]
-        + text(size: 8pt)[#step.grading],
+        + (if "grading" in step { [ \ ] + text(size: 8pt)[#step.grading] } else { [] }),
       )
 
       #if "projects" in step [
