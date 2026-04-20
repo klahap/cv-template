@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=../../../schemas/labels-schema.yaml
+downloadCv: Zur neuesten Version auf
+tasks: Aufgaben
+technologies: Technologien
+projects: Projekte
+easterEgg: Du hast das erste Easter Egg gefunden. Glückwunsch!
+social: Sozial
+contact: Kontakt
+emailAddress: E-Mail Adresse
+phone: Telefon
+languages: Sprachen
+workExperience: Berufserfahrung
+education: Ausbildung
+coreSkills: Kernkompetenzen
+coreTechnologies: Kerntechnologien

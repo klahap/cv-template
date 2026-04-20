@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../../../schemas/content-schema.yaml
+languages:
+  - name: Sindarin
+    proficiency: Muttersprache
+  - name: Gemeinsprache
+    proficiency: Fließend (C1)
+coreSkills:
+  - Bewahrung und Katalogisierung antiker Schriften
+  - Arkane Kartographie und Geländeanalyse
+  - Interreichliche Diplomatie und Verhandlungsführung
+  - Übersetzung und Interpretation elfischer Sprachen
+coreTechnologies:
+  - Elfentinte
+  - Mithril-Kompass
+  - Palantír-Bildgebung
+  - Númenórisches Pergament
+workExperience:
+  - name: Tirith Archives & Scrollworks
+    positions:
+      - from: 03/2021
+        title: Leitender Wissenshüter
+      - from: 06/2018
+        to: 02/2021
+        title: Wissenshüter
+    tasks:
+      - Katalogisierung und Bewahrung von über 3.000 antiken Schriftrollen zur
+        Geschichte der Älteren Tage.
+    technologies:
+      - Elfentinte
+  - name: Bruchtal Diplomatisches Korps
+    positions:
+      - from: 04/2015
+        to: 05/2018
+        title: Diplomatischer Gesandter
+    tasks:
+      - Vermittlung von Vertragsverhandlungen zwischen den Elbenkönigreichen und
+        den Freien Völkern Mittelerdes.
+      - Übersetzung und Überbringung offizieller Korrespondenz über die Nebelberge.
+  - name: Gondor Königliches Kartographieamt
+    positions:
+      - from: 01/2010
+        to: 03/2015
+        title: Junior-Kartograph
+    technologies:
+      - Mithril-Kompass
+      - Palantír-Bildgebung
+      - Númenórisches Pergament
+education:
+  - from: 09/2014
+    to: 07/2018
+    title: Master of Lore, Antike Schriften & Kartographie
+    institution: College of Celoneth
+    grading: 'Note: 1,20'
+    projects:
+      - Erstellung einer vergleichenden Analyse der Elbensprachen des Dritten
+        Zeitalters auf Basis von über 200 Primärquellen.
+      - Rekonstruktion einer verlorenen Karte der Beleriand-Küste anhand
+        fragmentierter númenórischer Seefahrtskarten.
+  - from: 09/2010
+    to: 07/2014
+    title: Bachelor of History, Ältere Zeitalter
+    institution: Akademie von Minas Anor
+    grading: 'Note: 1,80'

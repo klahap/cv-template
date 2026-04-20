@@ -1,5 +1,6 @@
-#let data = yaml(sys.inputs.at("translationFile", default: "content/translations/english.yaml"))
-#let general = yaml("content/general.yaml")
+#let labels = yaml(sys.inputs.at("labelsFile", default: "input/locales/en/labels.yaml"))
+#let content = yaml(sys.inputs.at("contentFile", default: "input/locales/en/content.yaml"))
+#let profile = yaml("input/profile.yaml")
 #let release-version = sys.inputs.at("releaseVersion", default: "dev")
 
 #set page(
@@ -10,11 +11,11 @@
       #release-version,
       #datetime.today().display()
     ]
-    #if "githubName" in general [
+    #if "githubName" in profile [
       #h(1fr)
       #text(fill: gray)[
-        #link("https://github.com/" + general.githubName + "/cv/releases")[
-          #data.downloadCv GitHub
+        #link("https://github.com/" + profile.githubName + "/cv/releases")[
+          #labels.downloadCv GitHub
         ]
       ]
     ]
@@ -93,13 +94,13 @@
   columns: (23%, 75%),
   gutter: 2%,
   [
-    #if "profilePictureFileName" in general [
+    #if "profilePictureFileName" in profile [
       #rect(
         inset: 0pt,
         stroke: 2pt + primaryColor,
       )[
         #image(
-          "content/images/" + general.profilePictureFileName,
+          "input/images/" + profile.profilePictureFileName,
           width: 90%,
         )
       ]
@@ -107,9 +108,9 @@
 
     #v(4pt)
 
-    #if "personalDetails" in data [
-      #section-title(data.personalDetails.title)
-      #for element in data.personalDetails.data [
+    #if "personalDetails" in content [
+      #section-title(labels.personalDetailsTitle)
+      #for element in content.personalDetails [
         *#element.name* \
         #element.value
         #v(4pt)
@@ -118,99 +119,99 @@
       #v(4pt)
     ]
 
-    #section-title(data.social.title)
+    #section-title(labels.social)
 
-    #if "linkedInName" in general [
+    #if "linkedInName" in profile [
       *LinkedIn* \
-      #link("https://www.linkedin.com/in/" + general.linkedInName)[
-        #general.fullName
+      #link("https://www.linkedin.com/in/" + profile.linkedInName)[
+        #profile.fullName
       ]
       #v(4pt)
     ]
 
-    #if "githubName" in general [
+    #if "githubName" in profile [
       *GitHub* \
-      #link("https://github.com/" + general.githubName)[
-        #general.githubName
+      #link("https://github.com/" + profile.githubName)[
+        #profile.githubName
       ]
       #v(4pt)
     ]
 
     #v(4pt)
 
-    #section-title(data.contact.title)
+    #section-title(labels.contact)
 
-    #if "emailAddress" in general [
-      *#data.contact.email* \
-      #link("mailto:" + general.emailAddress)
+    #if "emailAddress" in profile [
+      *#labels.emailAddress* \
+      #link("mailto:" + profile.emailAddress)
       #v(4pt)
     ]
 
-    #if "phoneNumber" in general [
-      *#data.contact.phone* \
-      #link("tel:" + general.phoneNumber)
+    #if "phoneNumber" in profile [
+      *#labels.phone* \
+      #link("tel:" + profile.phoneNumber)
       #v(4pt)
     ]
 
     #v(4pt)
 
-    #section-title(data.language.title)
+    #section-title(labels.languages)
 
-    #for language in data.language.languages [
+    #for language in content.languages [
       *#language.name* \
       #language.proficiency
       #v(4pt)
     ]
 
     #text(fill: white)[
-      #data.easterEgg
+      #labels.easterEgg
     ]
   ],
 
   [
     #text(size: 28pt, weight: "bold")[
-      #smallcaps(general.fullName)
+      #smallcaps(profile.fullName)
     ]
-    #if "jobTitle" in general [
+    #if "jobTitle" in profile [
       #linebreak()
       #text(size: 12pt, fill: primaryColor, weight: "bold")[
-        #smallcaps(general.jobTitle)
+        #smallcaps(profile.jobTitle)
       ]
     ]
 
-    #if "profile" in data [
+    #if "profile" in content [
       #v(4pt)
 
-      #section-title(data.profile.title)
+      #section-title(labels.profileTitle)
 
-      #data.profile.text
+      #content.profile
     ]
 
-    #if "coreSkills" in data [
+    #if "coreSkills" in content [
       #v(4pt)
 
-      #section-title(data.coreSkills.title)
+      #section-title(labels.coreSkills)
 
-      #for skill in data.coreSkills.skills [
+      #for skill in content.coreSkills [
         - #skill
       ]
     ]
 
-    #if "coreTechnologies" in data [
+    #if "coreTechnologies" in content [
       #v(4pt)
 
-      #section-title(data.coreTechnologies.title)
+      #section-title(labels.coreTechnologies)
 
-      #for technology in data.coreTechnologies.technologies [
+      #for technology in content.coreTechnologies [
         - #technology
       ]
     ]
 
     #v(4pt)
 
-    #section-title(data.workExperience.title)
+    #section-title(labels.workExperience)
 
-    #for company in data.workExperience.companies [
+    #for company in content.workExperience [
       #section-subtitle(company.name)
 
       #grid(
@@ -227,23 +228,23 @@
       )
 
       #if "tasks" in company [
-        *#data.tasks:*
+        *#labels.tasks:*
         #for task in company.tasks [
           - #task
         ]
       ]
 
       #if "technologies" in company [
-        *#data.technologies:*
+        *#labels.technologies:*
         #company.technologies.join(", ")
       ]
 
       #v(4pt)
     ]
 
-    #section-title(data.education.title)
+    #section-title(labels.education)
 
-    #for step in data.education.steps [
+    #for step in content.education [
       #grid(
         columns: (25%, 75%),
         gutter: 10pt,
@@ -256,7 +257,7 @@
       )
 
       #if "projects" in step [
-        *#data.projects*
+        *#labels.projects*
         #for project in step.projects [
           - #project
         ]

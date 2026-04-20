@@ -15,23 +15,25 @@ for arg in "$@"; do
   esac
 done
 
-for file in content/translations/*.yaml; do
-  translation="$(basename "$file" .yaml)"
+for locale_dir in input/locales/*/; do
+  locale="$(basename "$locale_dir")"
 
   if [ "$watch_mode" = true ]; then
     typst watch \
       --font-path ./fonts \
-      --input translationFile="$file" \
+      --input labelsFile="${locale_dir}labels.yaml" \
+      --input contentFile="${locale_dir}content.yaml" \
       --input releaseVersion="$release_version" \
       main.typ \
-      "dist/cv-${translation}.pdf" &
+      "dist/cv-${locale}.pdf" &
   else
     typst compile \
       --font-path ./fonts \
-      --input translationFile="$file" \
+      --input labelsFile="${locale_dir}labels.yaml" \
+      --input contentFile="${locale_dir}content.yaml" \
       --input releaseVersion="$release_version" \
       main.typ \
-      "dist/cv-${translation}.pdf"
+      "dist/cv-${locale}.pdf"
   fi
 done
 

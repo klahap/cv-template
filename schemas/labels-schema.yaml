@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=http://json-schema.org/draft-07/schema#
+type: object
+required:
+  - downloadCv
+  - tasks
+  - technologies
+  - projects
+  - easterEgg
+  - social
+  - contact
+  - emailAddress
+  - phone
+  - languages
+  - workExperience
+  - education
+additionalProperties: false
+properties:
+  downloadCv:
+    type: string
+  tasks:
+    type: string
+  technologies:
+    type: string
+  projects:
+    type: string
+  easterEgg:
+    type: string
+  social:
+    type: string
+  contact:
+    type: string
+  emailAddress:
+    type: string
+  phone:
+    type: string
+  languages:
+    type: string
+  workExperience:
+    type: string
+  education:
+    type: string
+  profileTitle:
+    type: string
+  coreSkills:
+    type: string
+  coreTechnologies:
+    type: string
+  personalDetailsTitle:
+    type: string

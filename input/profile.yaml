@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=./general-schema.yaml
+# yaml-language-server: $schema=../schemas/profile-schema.yaml
 fullName: Eryndel Caladorn
 jobTitle: Senior Lore Keeper
 emailAddress: eryndel@caladorn.me

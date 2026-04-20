@@ -1,0 +1,93 @@
+# yaml-language-server: $schema=http://json-schema.org/draft-07/schema#
+type: object
+required:
+  - languages
+  - workExperience
+  - education
+additionalProperties: false
+properties:
+  languages:
+    type: array
+    items:
+      type: object
+      required: [name, proficiency]
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+        proficiency:
+          type: string
+  profile:
+    type: string
+  coreSkills:
+    type: array
+    items:
+      type: string
+  coreTechnologies:
+    type: array
+    items:
+      type: string
+  personalDetails:
+    type: array
+    items:
+      type: object
+      required: [name, value]
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+  workExperience:
+    type: array
+    items:
+      type: object
+      required: [name, positions]
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+        positions:
+          type: array
+          items:
+            type: object
+            required: [from, title]
+            additionalProperties: false
+            properties:
+              from:
+                type: string
+              to:
+                type: string
+              title:
+                type: string
+        tasks:
+          type: array
+          items:
+            type: string
+        technologies:
+          type: array
+          items:
+            type: string
+  education:
+    type: array
+    items:
+      type: object
+      required: [from, to, title, institution, grading]
+      additionalProperties: false
+      properties:
+        from:
+          type: string
+        to:
+          type: string
+        title:
+          type: string
+        institution:
+          type: string
+        institutionNewline:
+          type: boolean
+        grading:
+          type: string
+        projects:
+          type: array
+          items:
+            type: string
