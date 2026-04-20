@@ -109,7 +109,7 @@
     #v(4pt)
 
     #if "personalDetails" in content [
-      #section-title(labels.personalDetailsTitle)
+      #section-title(labels.personalDetails)
       #for element in content.personalDetails [
         *#element.name* \
         #element.value
@@ -182,7 +182,7 @@
     #if "profile" in content [
       #v(4pt)
 
-      #section-title(labels.profileTitle)
+      #section-title(labels.profile)
 
       #content.profile
     ]

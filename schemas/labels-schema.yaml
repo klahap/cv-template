@@ -39,11 +39,11 @@ properties:
     type: string
   education:
     type: string
-  profileTitle:
+  profile:
     type: string
   coreSkills:
     type: string
   coreTechnologies:
     type: string
-  personalDetailsTitle:
+  personalDetails:
     type: string
