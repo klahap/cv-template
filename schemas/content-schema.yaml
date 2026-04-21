@@ -83,8 +83,6 @@ properties:
           type: string
         institution:
           type: string
-        institutionNewline:
-          type: boolean
         grading:
           type: string
         projects:
